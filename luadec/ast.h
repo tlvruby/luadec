@@ -10,7 +10,7 @@ typedef enum StatementType_ StatementType;
 enum StatementType_ {
 	SIMPLE_STMT,
 	FUNCTION_STMT,
-	DO_STMT,
+	BLOCK_STMT,
 	WHILE_STMT,
 	REPEAT_STMT,
 	FORLOOP_STMT,
@@ -34,7 +34,6 @@ struct AstStatement_ {
 	int sub_print_count;
 };
 
-AstStatement* MakeStatement(StatementType type, char* code);
 AstStatement* MakeSimpleStatement(char* code);
 AstStatement* MakeBlockStatement(StatementType type, char* code);
 AstStatement* MakeIfStatement(char* test);
